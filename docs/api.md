@@ -1,33 +1,16 @@
 # Financeapp API Spec
 
-## Accounts
-```json
-{
-  "accounts": [{
-    "id": 1,
-    "name": "DIBA",
-    "balance": 12500.23,
-    "owner": "username",
-    "sharedUser": [
-      "username2",
-      "username3"
-    ]
-  }]
-}
-```
-
 ## Transaction
 ```json
 {
-  "transactions": [{
-    "id": 1,
-    "value": -500.50,
-    "categorie": {
-      "id": 2,
-      "name": "Lebensmittel",        
-    },
-    "note": "Edeka"
-  }]
+  "transactions": [
+    {
+      "id": 1,
+      "value": -500.50,
+      "categorie": 2,
+      "note": "Edeka"
+    }
+  ]
 }
 ```
 
@@ -53,6 +36,21 @@
 }
 ```
 
+## Budget
+```json
+{
+  "budgets": [{
+    "id": 1,
+    "value": -500.50,
+    "categorie": {
+      "id": 2,
+      "name": "Lebensmittel",        
+    },
+    "note": "Edeka"
+  }]
+}
+```
+
 ## Income
 
 
@@ -65,13 +63,11 @@
 
 
 
-`GET /:userid/accounts`
+`GET /transactions`
 
 ## Version 1
 * Login (E-Mail / Password)
 * Dashboard (Overview, Net worth, Basic Charts)
-* Account
-  * Shared Accounts
 * Categories
   * Subcategories
 * Bills
